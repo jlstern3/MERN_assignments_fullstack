@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 
 const AuthorForm = (props) => {
     // deconstruct props for CreateAuthor and EditAuthor
-    const {errors, author, setAuthor, handleSubmit, submitButtonLabel} = props;
+    const {errors, author, setAuthor, handleSubmit, submitButtonLabel, submitButtonColor} = props;
 
     // create functionality for when input is changed
     const inputChange = (e) => {
@@ -33,7 +33,7 @@ const AuthorForm = (props) => {
                 value = {author.name}
                 onChange = {(e) => inputChange(e)}
                 ></input>
-                <Button outlined color = "success" type = "submit">{submitButtonLabel}</Button>
+                <Button outlined color = {submitButtonColor} type = "submit">{submitButtonLabel}</Button>
             </form>
         </div>
     )

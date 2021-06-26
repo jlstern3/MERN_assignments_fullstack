@@ -9,7 +9,7 @@ const CreateAuthor = (props) => {
     const [author, setAuthor] = useState({
         name: "",
     });
-    
+
     const[errors, setErrors] = useState({});
 
     const handleSubmit = (e) => {
@@ -41,6 +41,7 @@ const CreateAuthor = (props) => {
                 errors = {errors}
                 handleSubmit = {handleSubmit}
                 submitButtonLabel = {"Bring my author to life!"}
+                submitButtonColor = {"success"}
             />
         </div>
     )

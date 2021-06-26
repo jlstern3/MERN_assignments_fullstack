@@ -3,6 +3,7 @@ import {Router} from '@reach/router';
 import AllAuthors from './components/AllAuthors';
 import CreateAuthor from './components/CreateAuthor';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import EditAuthor from './components/EditAuthor';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Router>
         <AllAuthors default path = "/api/authors" />
         <CreateAuthor path = "/api/authors/new"/>
+        <EditAuthor path = "/api/authors/:id/edit"/>
       </Router>
     </div>
   );

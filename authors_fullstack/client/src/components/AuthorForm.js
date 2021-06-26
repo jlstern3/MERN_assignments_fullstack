@@ -18,7 +18,6 @@ const AuthorForm = (props) => {
 
     return(
         <div>
-            <h3>Author Form</h3>
             <form onSubmit = {(e) => handleSubmit(e)}>
                 <label>Name: </label>
                 {/* ternary operator to show validations */}
@@ -33,7 +32,7 @@ const AuthorForm = (props) => {
                 value = {author.name}
                 onChange = {(e) => inputChange(e)}
                 ></input>
-                <Button outlined color = {submitButtonColor} type = "submit">{submitButtonLabel}</Button>
+                <Button outline color = {submitButtonColor} type = "submit">{submitButtonLabel}</Button>
             </form>
         </div>
     )

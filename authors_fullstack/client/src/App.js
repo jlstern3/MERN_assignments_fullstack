@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import EditAuthor from './components/EditAuthor';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -14,6 +15,7 @@ function App() {
         <AllAuthors default path = "/api/authors" />
         <CreateAuthor path = "/api/authors/new"/>
         <EditAuthor path = "/api/authors/:id/edit"/>
+
       </Router>
     </div>
   );

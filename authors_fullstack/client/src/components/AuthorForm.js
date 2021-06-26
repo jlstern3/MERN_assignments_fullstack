@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from 'reactstrap';
+import { Link, navigate } from '@reach/router';
 
 
 const AuthorForm = (props) => {
@@ -33,6 +34,7 @@ const AuthorForm = (props) => {
                 onChange = {(e) => inputChange(e)}
                 ></input>
                 <Button outline color = {submitButtonColor} type = "submit">{submitButtonLabel}</Button>
+                <Link to = "/api/movies"><Button outline color = "danger">Cancel</Button></Link>
             </form>
         </div>
     )

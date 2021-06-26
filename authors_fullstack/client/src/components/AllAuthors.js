@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link,navigate} from '@reach/router';
 import AuthorForm from './AuthorForm';
 import {Button, Table, UncontrolledTooltip} from 'reactstrap';
+import DeleteAuthor from './DeleteAuthor';
 
 const AllAuthors = (props) => {
     //need state to hold an array to map through 
@@ -18,6 +19,13 @@ const AllAuthors = (props) => {
                 console.log(err);
             })
     }, []);
+
+    const afterDeleteHandler = (deletedAuthor) => {
+        let filteredAuthorArray = authors.filter((authors) => {
+            return authors._id !== deletedAuthor;
+        })
+        setAuthors(filteredAuthorArray);
+    }
 
     return(
         <div>
@@ -36,7 +44,14 @@ const AllAuthors = (props) => {
                         authors.map((author, index)=> (
                         <tr>
                         <td key = {index}>{author.name}</td>
-                        <td><Link to = {"/api/authors/" + author._id + "/edit"}><Button outline color = "primary">Edit</Button></Link><Button outline color = "danger">Delete</Button></td>
+                        <td>
+                            <Link to = {"/api/authors/" + author._id + "/edit"}>
+                                <Button outline color = "primary">Edit</Button></Link>
+                            <DeleteAuthor
+                            id = {author._id}
+                            afterDeleteHandler = {afterDeleteHandler} />
+                        </td>
+
                         </tr>
                         ))
                     }

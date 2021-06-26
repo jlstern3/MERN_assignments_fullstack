@@ -4,6 +4,7 @@ import AllAuthors from './components/AllAuthors';
 import CreateAuthor from './components/CreateAuthor';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditAuthor from './components/EditAuthor';
+import DeleteAuthor from './components/DeleteAuthor';
 
 
 

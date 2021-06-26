@@ -30,7 +30,7 @@ const AllAuthors = (props) => {
     return(
         <div>
             <Link to = "/api/authors/new"><Button outline color = "success" id = "UncontrolledTooltipExample">Add an author</Button></Link>
-            <UncontrolledTooltip placement = "left" target = "UncontrolledTooltipExample">Does this work?</UncontrolledTooltip>
+            <UncontrolledTooltip placement = "left" target = "UncontrolledTooltipExample">Pick your favorite!</UncontrolledTooltip>
             <Table striped hover>
                 <thead>
                     <tr>

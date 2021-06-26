@@ -19,12 +19,13 @@ const AuthorForm = (props) => {
 
     return(
         <div>
+            <Link to = "/api/authors">Home</Link>
             <form onSubmit = {(e) => handleSubmit(e)}>
                 <label>Name: </label>
                 {/* ternary operator to show validations */}
                 {
                     errors.name ?
-                    <span>{errors.name.message}</span>
+                    <span className = "errors">{errors.name.message}</span>
                     : null
                 }
                 <input

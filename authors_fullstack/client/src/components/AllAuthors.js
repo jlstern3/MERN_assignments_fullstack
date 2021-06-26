@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Link,navigate} from '@reach/router';
 import AuthorForm from './AuthorForm';
+import {Button} from 'reactstrap';
 
 const AllAuthors = (props) => {
     //need state to hold an array to map through 
@@ -20,7 +21,7 @@ const AllAuthors = (props) => {
 
     return(
         <div>
-            <Link to = "/api/authors/new"><button>Add an author</button></Link>
+            <Link to = "/api/authors/new"><Button color = "primary">Add an author</Button></Link>
             <table>
                 <thead>
                     <tr>

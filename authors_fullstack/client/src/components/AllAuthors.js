@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import {Link,navigate} from '@reach/router';
 import AuthorForm from './AuthorForm';
-import {Button} from 'reactstrap';
+import {Button, Table, UncontrolledTooltip} from 'reactstrap';
 
 const AllAuthors = (props) => {
     //need state to hold an array to map through 
@@ -21,8 +21,9 @@ const AllAuthors = (props) => {
 
     return(
         <div>
-            <Link to = "/api/authors/new"><Button color = "primary">Add an author</Button></Link>
-            <table>
+            <Link to = "/api/authors/new"><Button outline color = "success" id = "UncontrolledTooltipExample">Add an author</Button></Link>
+            <UncontrolledTooltip placement = "left" target = "UncontrolledTooltipExample">Does this work?</UncontrolledTooltip>
+            <Table striped hover>
                 <thead>
                     <tr>
                         <td>Author</td>
@@ -35,7 +36,7 @@ const AllAuthors = (props) => {
                         authors.map((author, index)=> (
                         <tr>
                         <td key = {index}>{author.name}</td>
-                        <td><Link to = {"/api/authors/" + author._id + "/edit"}><button>Edit</button></Link><button>Delete</button></td>
+                        <td><Link to = {"/api/authors/" + author._id + "/edit"}><Button outline color = "primary">Edit</Button></Link><Button outline color = "danger">Delete</Button></td>
                         </tr>
                         ))
                     }
@@ -43,7 +44,7 @@ const AllAuthors = (props) => {
                         
                     
                 </tbody>
-            </table>
+            </Table>
         </div>
     )
 }

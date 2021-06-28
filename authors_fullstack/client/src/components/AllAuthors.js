@@ -5,6 +5,7 @@ import {Button, Table, UncontrolledTooltip} from 'reactstrap';
 import DeleteAuthor from './DeleteAuthor';
 import io from 'socket.io-client';
 
+
 const AllAuthors = (props) => {
     //need state to hold an array to map through 
     const [authors, setAuthors] = useState([]);

@@ -20,6 +20,7 @@ const io = socketio(server, {
         //security issue
         origin: 'http://localhost:8000', 
         methods: ['GET', 'POST'],
+        credentials: true,
         //not secure, can define who can talk and how 
         allowedHeaders: ['*']
     }
@@ -33,6 +34,5 @@ const io = socketio(server, {
 io.on("connection", (socket) => {
     //socket is an object so it has keys you can access
     console.log('Server side of socket id:' + socket.id);
-
 });
 

@@ -9,8 +9,8 @@ app.use(cors());
 
 require('./config/mongoose.config');
 
-// connect routes here
-// require('./routes/player.routes');
+
+require('./routes/player.routes')(app);
 
 app.listen(port, ()=> { 
     console.log(`Server is actively listening on port ${port}`);

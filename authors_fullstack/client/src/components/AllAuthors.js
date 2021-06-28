@@ -1,13 +1,31 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import {Link,navigate} from '@reach/router';
-import AuthorForm from './AuthorForm';
+import {Link} from '@reach/router';
 import {Button, Table, UncontrolledTooltip} from 'reactstrap';
 import DeleteAuthor from './DeleteAuthor';
+import io from 'socket.io-client';
 
 const AllAuthors = (props) => {
     //need state to hold an array to map through 
-    const [authors, setAuthors] = useState([])
+    const [authors, setAuthors] = useState([]);
+    //need to use state to hold socket connection in memory
+    //so the connection remains as long as this component is loaded 
+    //below sets the socket only 1 time b/c it's run with a callback function
+    const[socket, setSocket] = useState( () => io(":8000"));
+
+    useEffect(()=> {
+        console.log("Inside of useEffect for sockets");
+        // we listen using the .on() function - this is for BOTH client and server
+        //socket is listening for connect conversation, server will reply back with console.log
+        socket.on("connect", () => {
+            console.log("We are connected with the server on:" + socket.id );
+        });
+        //socket is listening for different 
+        socket.on("author_added", (data) => {
+            console.log(data);
+        });
+    }, []);
+
 
     useEffect(()=> {
         axios.get("http://localhost:8000/api/authors")

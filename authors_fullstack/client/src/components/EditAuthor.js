@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import AuthorForm from './AuthorForm';
 import axios from 'axios';
-import { Link, navigate } from '@reach/router';
-import { Button } from 'reactstrap';
+import { navigate } from '@reach/router';
+
 
 const EditAuthor = (props) => {
     const [author, setAuthor] = useState({});

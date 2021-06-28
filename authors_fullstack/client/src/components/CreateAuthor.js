@@ -1,8 +1,8 @@
 import AuthorForm from "./AuthorForm";
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import axios from 'axios';
-import { Link,navigate } from "@reach/router";
-import { Button } from "reactstrap";
+import { navigate } from "@reach/router";
+
 
 const CreateAuthor = (props) => {
     // create state for author (with structure) and errors

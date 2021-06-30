@@ -1,18 +1,18 @@
 const Player = require('../models/player.models');
 
-// module.exports.createPlayer = (req, res) => {
-//     console.log("inside createPlayer");
-//     console.log(req.data);
-//     Player.create(req.body)
-//         .then((newPlayer) => {
-//             console.log(newPlayer);
-//             res.json(newPlayer);
-//         })
-//         .catch((err) => {
-//             console.log(err);
-//             res.json(err);
-//         });
-// }
+module.exports.createPlayer = (req, res) => {
+    console.log("inside createPlayer");
+    console.log(req.data);
+    Player.create(req.body)
+        .then((newPlayer) => {
+            console.log(newPlayer);
+            res.json(newPlayer);
+        })
+        .catch((err) => {
+            console.log(err);
+            res.json(err);
+        });
+}
 
 
 module.exports.getAllPlayers = (req, res) => {

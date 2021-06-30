@@ -2,3 +2,10 @@
     color: red;
     margin: 10px;
 }
+
+.App{
+    margin: 20px;
+    width: 1366px;
+    height: 784px;
+    overflow-y: scroll;
+}

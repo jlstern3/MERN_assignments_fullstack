@@ -23,4 +23,4 @@ const PlayerSchema = new mongoose.Schema({
     }
 }, {timestamps: true});
 
-module.export = mongoose.model("Player", PlayerSchema);
+module.exports = mongoose.model("Player", PlayerSchema);

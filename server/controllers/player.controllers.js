@@ -27,3 +27,16 @@ module.exports.getAllPlayers = (req, res) => {
             res.json(err);
         });
 }
+
+module.exports.deletePlayer = (req, res) => {
+    console.log('inside deletePlayer');
+    Player.findByIdAndDelete(req.params.id)
+        .then((deletedPlayer)=> {
+            console.log(deletedPlayer);
+            res.json(deletedPlayer)
+        })
+        .catch((err) => {
+            console.log(err);
+            res.json(err);
+        });
+}

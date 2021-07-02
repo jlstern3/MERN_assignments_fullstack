@@ -2,6 +2,7 @@ import AuthorForm from "./AuthorForm";
 import React, {useState} from "react";
 import axios from 'axios';
 import { navigate } from "@reach/router";
+import {Alert} from 'reactstrap';
 
 
 const CreateAuthor = (props) => {
@@ -43,6 +44,9 @@ const CreateAuthor = (props) => {
                 submitButtonLabel = {"Bring my author to life!"}
                 submitButtonColor = {"success"}
             />
+            <Alert color="info">
+                Alert!  You're about to bring a very talented author to (cyber) life. 
+            </Alert>
         </div>
     )
 }

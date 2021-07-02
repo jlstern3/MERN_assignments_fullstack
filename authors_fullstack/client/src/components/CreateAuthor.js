@@ -33,16 +33,11 @@ const CreateAuthor = (props) => {
             .catch ((err) => {console.log(err);})
     }
 
-    // const AlertExample = (props) => {
-    //     const [visible, setVisible] = useState(true);
-    //     const onDismiss = () => setVisible(false);
 
-    //     return (
-    //         <Alert color="info" isOpen={visible} toggle={onDismiss}>
-    //             I am an alert and I can be dismissed!
-    //         </Alert>
-    //     );
-    // }
+        const [visible, setVisible] = useState(true);
+        const onDismiss = () => setVisible(false);
+
+
 
     return(
         <div>
@@ -55,9 +50,15 @@ const CreateAuthor = (props) => {
                 submitButtonLabel = {"Bring my author to life!"}
                 submitButtonColor = {"success"}
             />
-            <Alert color="info">
+            {/* <Alert color="info">
                 Alert!  You're about to bring a very talented author to (cyber) life. 
+            </Alert> */}
+
+
+            <Alert color="info" isOpen={visible} toggle={onDismiss}>
+                I am an alert and I can be dismissed!
             </Alert>
+        
         </div>
     )
 }

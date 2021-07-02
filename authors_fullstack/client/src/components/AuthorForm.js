@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 import { Link, navigate } from '@reach/router';
+import {Alert} from 'reactstrap';
 
 
 const AuthorForm = (props) => {
@@ -25,7 +26,7 @@ const AuthorForm = (props) => {
                 {/* ternary operator to show validations */}
                 {
                     errors.name ?
-                    <span className = "errors">{errors.name.message}</span>
+                    <span className = "errors"><Alert color="danger">{errors.name.message}</Alert></span>
                     : null
                 }
                 <input

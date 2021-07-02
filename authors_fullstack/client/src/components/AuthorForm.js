@@ -19,7 +19,7 @@ const AuthorForm = (props) => {
 
     return(
         <div>
-            <Link to = "/api/authors">Home</Link>
+            <Link to = "/api/authors"><Button color = "link">Home</Button></Link>
             <form onSubmit = {(e) => handleSubmit(e)}>
                 <label>Name: </label>
                 {/* ternary operator to show validations */}

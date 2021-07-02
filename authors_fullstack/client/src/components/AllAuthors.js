@@ -49,8 +49,9 @@ const AllAuthors = (props) => {
 
     return(
         <div>
+            <h1>Favorite Authors</h1>
             <Link to = "/api/authors/new"><Button outline color = "success" id = "UncontrolledTooltipExample">Add an author</Button></Link>
-            <UncontrolledTooltip placement = "left" target = "UncontrolledTooltipExample">Pick your favorite!</UncontrolledTooltip>
+            <UncontrolledTooltip placement = "left" target = "UncontrolledTooltipExample">Add your new favorite author!</UncontrolledTooltip>
             <Table striped hover>
                 <thead>
                     <tr>

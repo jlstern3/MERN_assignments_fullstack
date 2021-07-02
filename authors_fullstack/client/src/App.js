@@ -11,7 +11,7 @@ import DeleteAuthor from './components/DeleteAuthor';
 function App() {
   return (
     <div className="App">
-      <h1>Favorite Authors</h1>
+      
       <Router>
         <AllAuthors default path = "/api/authors" />
         <CreateAuthor path = "/api/authors/new"/>

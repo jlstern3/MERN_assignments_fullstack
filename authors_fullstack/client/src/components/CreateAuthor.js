@@ -34,7 +34,7 @@ const CreateAuthor = (props) => {
 
     return(
         <div>
-            <h3>Create Author</h3>
+            <h3>Add Your New Favorite Author</h3>
             <AuthorForm
                 author = {author}
                 setAuthor = {setAuthor}

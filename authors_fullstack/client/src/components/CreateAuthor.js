@@ -33,6 +33,17 @@ const CreateAuthor = (props) => {
             .catch ((err) => {console.log(err);})
     }
 
+    // const AlertExample = (props) => {
+    //     const [visible, setVisible] = useState(true);
+    //     const onDismiss = () => setVisible(false);
+
+    //     return (
+    //         <Alert color="info" isOpen={visible} toggle={onDismiss}>
+    //             I am an alert and I can be dismissed!
+    //         </Alert>
+    //     );
+    // }
+
     return(
         <div>
             <h3>Add Your New Favorite Author</h3>

@@ -2,7 +2,7 @@ import AuthorForm from "./AuthorForm";
 import React, {useState} from "react";
 import axios from 'axios';
 import { navigate } from "@reach/router";
-import {Alert} from 'reactstrap';
+import {Alert, Spinner} from 'reactstrap';
 
 
 const CreateAuthor = (props) => {
@@ -58,6 +58,7 @@ const CreateAuthor = (props) => {
             <Alert color="info" isOpen={visible} toggle={onDismiss}>
                 I am an alert and I can be dismissed!
             </Alert>
+            <Spinner color="primary" />
         
         </div>
     )

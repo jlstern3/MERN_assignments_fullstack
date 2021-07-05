@@ -29,7 +29,9 @@ const CreateAuthor = (props) => {
                 else{
                     setAuthor(res);
             //tell the server that we successfully create a new author
-                socket.emit("added_author", data);
+                socket.emit("added_author", res.data);
+            //make sure to clean up after yourself - do NOT leave a socket connected!
+                socket.disconnect();
             // upon success (no errors) navigate to all authors
                     navigate("/api/authors");
                 }

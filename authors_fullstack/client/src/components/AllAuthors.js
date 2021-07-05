@@ -30,10 +30,14 @@ const AllAuthors = (props) => {
             console.log("Current setAuthors state: " );
             console.log(authors);
             setAuthors((currentAllAuthorsValue) => {
-                console.log("inside setAUthors" + currentAllAuthorsValue);
+                console.log("inside setAuthors" + currentAllAuthorsValue);
                 return[data, ...currentAllAuthorsValue];
             })
         });
+        
+        //clean up connection when this component is unloaded/closed
+        //only runs when this component is closed
+        return ()=> socket.disconnect();
     }, []);
 
 

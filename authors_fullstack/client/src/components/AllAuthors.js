@@ -75,8 +75,8 @@ const AllAuthors = (props) => {
                     
                     {
                         authors.map((author, index)=> (
-                        <tr>
-                        <td key = {index}>{author.name}</td>
+                        <tr key = {index}>
+                        <td>{author.name}</td>
                         <td>
                             <Link to = {"/api/authors/" + author._id + "/edit"}>
                                 <Button outline color = "primary">Edit</Button></Link>

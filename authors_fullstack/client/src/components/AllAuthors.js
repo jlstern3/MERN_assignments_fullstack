@@ -24,7 +24,7 @@ const AllAuthors = (props) => {
         });
 
 
-        //socket is listening for different 
+        //socket is listening for when a new author is added
         socket.on("author_added", (data) => {
             console.log(data);
             console.log("Current setAuthors state: " );

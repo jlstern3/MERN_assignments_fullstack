@@ -36,6 +36,7 @@ io.on("connection", (socket) => {
     //socket is an object so it has keys you can access
     console.log('Server side of socket id:' + socket.id);
     socket.on("added_author", (data) => {
+        console.log(data);
 //emits an event to all clients other than the one that sent the original message
         socket.broadcast.emit("author_added", data);
     })

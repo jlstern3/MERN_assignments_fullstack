@@ -23,10 +23,16 @@ const AllAuthors = (props) => {
             console.log("We are connected with the server on:" + socket.id );
         });
 
-        
+
         //socket is listening for different 
         socket.on("author_added", (data) => {
             console.log(data);
+            console.log("Current setAuthors state: " );
+            console.log(authors);
+            setAuthors((currentAllAuthorsValue) => {
+                console.log("inside setAUthors" + currentAllAuthorsValue);
+                return[data, ...currentAllAuthorsValue];
+            })
         });
     }, []);
 

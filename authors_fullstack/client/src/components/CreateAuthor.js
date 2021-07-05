@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import axios from 'axios';
 import { navigate } from "@reach/router";
 import {Alert, Spinner} from 'reactstrap';
+import io from 'socket.io-client'; 
 
 
 const CreateAuthor = (props) => {
@@ -10,6 +11,8 @@ const CreateAuthor = (props) => {
     const [author, setAuthor] = useState({
         name: "",
     });
+    //sockets will never use the setter so we can ignore it!
+    const[socket] = useState(()=> io(":8000"));
 
     const[errors, setErrors] = useState({});
 
@@ -24,8 +27,9 @@ const CreateAuthor = (props) => {
                     setErrors(res.data.errors);
                 }
                 else{
-                    // NEED THIS LINE?
                     setAuthor(res);
+            //tell the server that we successfully create a new author
+                socket.emit("added_author", data);
             // upon success (no errors) navigate to all authors
                     navigate("/api/authors");
                 }

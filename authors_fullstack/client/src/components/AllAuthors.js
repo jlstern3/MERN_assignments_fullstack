@@ -22,6 +22,8 @@ const AllAuthors = (props) => {
         socket.on("connect", () => {
             console.log("We are connected with the server on:" + socket.id );
         });
+
+        
         //socket is listening for different 
         socket.on("author_added", (data) => {
             console.log(data);

@@ -1,6 +1,6 @@
 const Author = require('../models/authors.models');
 
-//Create Product
+
 module.exports.createAuthor = (req,res) => {
     console.log("Inside createAuthor");
     console.log(req.body);
@@ -15,7 +15,7 @@ module.exports.createAuthor = (req,res) => {
         });
 }
 
-//Get all products
+
 module.exports.getAllAuthors = (req, res) => {
     console.log("inside getAllAuthors");
     Author.find({})
@@ -29,7 +29,7 @@ module.exports.getAllAuthors = (req, res) => {
         });
 }
 
-//get single product
+
 module.exports.getSingleAuthor = (req, res) => {
     console.log("Inside getSingleAuthor");
     Author.findById(req.params.id)
@@ -43,7 +43,7 @@ module.exports.getSingleAuthor = (req, res) => {
         });
 }
 
-//delete product
+
 module.exports.deleteAuthor = (req,res) =>{
     console.log("Inside deleteAuthor");
     Author.findByIdAndDelete(req.params.id)
@@ -57,7 +57,6 @@ module.exports.deleteAuthor = (req,res) =>{
         });
 }
 
-//update product
 module.exports.updateAuthor = (req, res) =>{
     console.log("Inside updateAuthor");
     Author.findByIdAndUpdate(req.params.id, req.body, {

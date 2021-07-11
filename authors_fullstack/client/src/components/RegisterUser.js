@@ -45,7 +45,7 @@ const register = e => {
         confirmPassword: "",
         })
 
-        setConfirmReg("Thank you for Registering, you can now log in!");
+        setConfirmReg("Thank you for registering, you can now log in!");
         setErrs({});  // remember to reset errors state if it was successful
     })
     .catch((err) => {

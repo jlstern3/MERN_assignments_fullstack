@@ -5,6 +5,7 @@ import CreateAuthor from './components/CreateAuthor';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditAuthor from './components/EditAuthor';
 import DeleteAuthor from './components/DeleteAuthor';
+import LogReg from './views/LogReg';
 
 
 
@@ -16,7 +17,7 @@ function App() {
         <AllAuthors default path = "/api/authors" />
         <CreateAuthor path = "/api/authors/new"/>
         <EditAuthor path = "/api/authors/:id/edit"/>
-
+        <LogReg path = "/loginRegister" />
       </Router>
     </div>
   );

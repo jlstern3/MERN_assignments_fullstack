@@ -1,5 +1,5 @@
 const User = require('../models/users.models');
-const bycrypt = require('bcyrpt');
+const bcrypt = require('bcrypt');
 
 //alternate syntax for exporting controller functions
 module.exports = {

@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const UserSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: [true, "Name is required."],
-    },
     username: {
         type: String,
         required: [true, "Username is required."],
@@ -31,7 +27,9 @@ UserSchema.virtual("confirmPassword")
 
 
 UserSchema.pre("validate", function(next){
-    if (this.password != this._confirmPassword) {
+    if (this.password !== this.confirmPassword) {
+        console.log(this.password);
+        console.log(this.confirmPassword);
         this.invalidate("confirmPassword", "Passwords didn't match.  Please try again.");
     }
     // if passwords match, we can continue on to the "normal" validate steps

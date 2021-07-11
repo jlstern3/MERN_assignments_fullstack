@@ -1,19 +1,26 @@
 //load up all of our keys and values from the .env file into memory
 //we can access this through an object called process.env
-require('dotenv').config();
+require("dotenv").config();
+
 const express = require('express');
 const app = express();
-const port = 8000;
 const cors = require('cors');
 const socketio = require('socket.io');
+const cookieParser = require('cookie-parser');
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(cors());
 
-require('./config/mongoose.config');
+app.use(cors({
+	credentials: true,
+	origin: "http://localhost:3000",
+}));
+app.use(cookieParser());
 
+require('./config/mongoose.config');
 require('./routes/authors.routes') (app);
+require('./routes/users.routes')(app);
 
 const server = app.listen(process.env.MY_PORT, () => console.log("Server is listening on Port " + process.env.MY_PORT));
 // app.listen(port, () => console.log(`Server is listening on Port ${port}`)); 

@@ -1,3 +1,6 @@
+//load up all of our keys and values from the .env file into memory
+//we can access this through an object called process.env
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const port = 8000;
@@ -12,7 +15,7 @@ require('./config/mongoose.config');
 
 require('./routes/authors.routes') (app);
 
-const server = app.listen(port, () => console.log(`Server is listening on Port ${port}`));
+const server = app.listen(process.env.MY_PORT, () => console.log("Server is listening on Port " + process.env.MY_PORT));
 // app.listen(port, () => console.log(`Server is listening on Port ${port}`)); 
 
 const io = socketio(server, {
